@@ -646,16 +646,15 @@ importers:
       '@anthropic-ai/sdk':
         specifier: ^0.78.0
         version: 0.78.0(zod@4.3.6)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.3.5
       p-limit:
         specifier: ^7.3.0
         version: 7.3.0
       p-retry:
         specifier: ^7.1.1
         version: 7.1.1
-    devDependencies:
-      '@types/node':
-        specifier: 'catalog:'
-        version: 25.3.5
 
   scripts:
     devDependencies:
