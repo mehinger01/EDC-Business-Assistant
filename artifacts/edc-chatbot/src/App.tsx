@@ -132,12 +132,23 @@ export default function App() {
             </div>
           </div>
           <div>
-            <div style={{ color: TEXT_DARK, fontSize: 16, fontWeight: 700 }}>
-              Ogemaw County EDC
-            </div>
-            <div style={{ color: GREEN, fontSize: 12, marginTop: 2 }}>
-              Collaborate, Innovate, and Grow Ogemaw County
-            </div>
+            <button
+              onClick={() => { setMessages([]); setInput(""); }}
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                cursor: "pointer",
+                textAlign: "left",
+              }}
+            >
+              <div style={{ color: TEXT_DARK, fontSize: 16, fontWeight: 700 }}>
+                Ogemaw County EDC
+              </div>
+              <div style={{ color: GREEN, fontSize: 12, marginTop: 2 }}>
+                Collaborate, Innovate, and Grow Ogemaw County
+              </div>
+            </button>
           </div>
           <div
             style={{
