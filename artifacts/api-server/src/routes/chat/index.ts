@@ -2,10 +2,7 @@ import { Router } from "express";
 import Anthropic from "@anthropic-ai/sdk";
 
 const anthropic = new Anthropic({
-  apiKey: process.env.AI_INTEGRATIONS_ANTHROPIC_API_KEY ?? process.env.ANTHROPIC_API_KEY ?? "",
-  ...(process.env.AI_INTEGRATIONS_ANTHROPIC_BASE_URL
-    ? { baseURL: process.env.AI_INTEGRATIONS_ANTHROPIC_BASE_URL }
-    : {}),
+  apiKey: process.env.ANTHROPIC_API_KEY ?? "",
 });
 
 const chatRouter = Router();
@@ -114,7 +111,7 @@ chatRouter.post("/chat", async (req, res) => {
 
     res.json({ reply: text });
   } catch (err) {
-    req.log.error({ err }, "Anthropic API error");
+    console.error("Anthropic API error:", err);
     res.status(500).json({
       error: "Something went wrong. Please try again or call (989) 345-1090.",
     });
