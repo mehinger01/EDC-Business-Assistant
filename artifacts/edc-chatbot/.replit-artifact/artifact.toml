@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Ogemaw County EDC Chatbot"
+version = "1.0.0"
+id = "artifacts/edc-chatbot"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18612
+
+[services.development]
+run = "pnpm --filter @workspace/edc-chatbot run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/edc-chatbot", "run", "build" ]
+publicDir = "artifacts/edc-chatbot/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18612"
+BASE_PATH = "/"
